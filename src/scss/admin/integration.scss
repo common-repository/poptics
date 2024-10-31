@@ -1,0 +1,91 @@
+.pt-integration-top-bar-container {
+    margin-bottom: 1.5rem;
+}
+
+.pt-integration-avatar {
+    background-color: transparent;
+}
+.pt-integration-card-container {
+    position: relative;
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1.75rem 2.5rem 1.5rem 1.5rem;
+
+    svg {
+        height: 100%;
+    }
+}
+
+.pt-integration-card-text {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: #4f4f4f;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.pt-integration-card-button-not-connected {
+    background-color: #2563eb;
+    color: white;
+    width: min-content;
+    border-radius: 0.4rem;
+    padding: 0.33rem 0.8rem 0.33rem 0.5rem;
+}
+.pt-integration-card-button-disconnect {
+    background-color: #fff5f6;
+    color: #e42222;
+    width: min-content;
+    border-radius: 0.4rem;
+    padding: 0.33rem 0.8rem 0.33rem 0.5rem;
+    border: 1px solid #e42222;
+}
+
+.pt-integration-card-button-connected {
+    background-color: #e8f8f8;
+    color: #16a34a;
+    border: 1px solid #16a34a;
+    width: min-content;
+    border-radius: 0.4rem;
+    padding: 0.33rem 0.8rem 0.33rem 0.5rem;
+}
+
+.pt-integration-modal-header-container {
+    margin: 1rem 0px;
+}
+
+.pt-integration-modal-header {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #1f2937;
+    letter-spacing: 0.0005rem;
+    text-transform: capitalize;
+}
+
+#integration_modal_form {
+    .ant-btn-default {
+        border: none;
+        border-color: transparent !important;
+        color: #2563eb;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    .ant-form-item-required {
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+    }
+    input {
+        border-color: #e5e7eb !important;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+    }
+}
+
+.pt-integration-pro-tag {
+    position: absolute;
+    top: 0.6rem;
+    right: 0;
+    cursor: pointer;
+}

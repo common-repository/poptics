@@ -1,0 +1,107 @@
+.pt-onboard-wizard-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 7.5rem;
+}
+
+.pt-welcome-title {
+    @include mobile {
+        font-size: 1.7rem !important;
+    }
+}
+
+.pt-checkbox-container {
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    display: flex;
+    margin-bottom: 0.625rem;
+
+    &:hover {
+        border: 1px solid #bfdbfe;
+    }
+}
+
+.pt-onboard-items-container {
+    padding: 2.75rem;
+    width: 30.375rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1.5rem;
+    text-align: center;
+
+    @include mobile {
+        width: 16rem;
+    }
+    @include tablet {
+        width: 25rem;
+    }
+    @include large-tablet {
+        width: 28rem;
+    }
+}
+
+#pt-onboard-welcome-description {
+    margin-top: 0.7rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.pt-onboard-input-item {
+    margin-bottom: 0.5rem !important;
+}
+.pt-onboard-footer-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+
+    a {
+        padding: 0.5rem 0.9rem;
+        border: 1px solid #2563eb;
+        border-radius: 0.5rem;
+    }
+    button {
+        padding: 0.5rem 0.9rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        height: 100% !important;
+    }
+
+    @include mobile {
+        width: 21.8rem;
+    }
+    @include tablet {
+        width: 30.8rem;
+    }
+}
+
+.pt-onboard-permission-card-container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1.125rem 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    gap: 1rem;
+    text-align: left;
+    margin-top: 0.875rem;
+}
+
+#pt-onboard-permission-card-title {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    text-transform: capitalize;
+}
+
+#pt-onboard-permission-switch-container {
+    margin-top: 1.25rem;
+}
+
+#pt-onboard-permission-description-container {
+    margin-top: 0.875rem;
+    padding-right: 1rem;
+    text-align: left;
+}

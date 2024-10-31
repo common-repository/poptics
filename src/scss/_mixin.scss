@@ -1,0 +1,74 @@
+// rem conversion function
+$bfSize: 16px;
+$mobile-width: 360px;
+$tablet-width: 768px;
+$large-tablet-width: 820px;
+$desktop-width: 1024px;
+$large-screen-width: 1200px;
+
+@function rem($pixels, $context: $bfSize) {
+    @if (unitless($pixels)) {
+        $pixels: $pixels * 1px;
+    }
+
+    @if (unitless($context)) {
+        $context: $context * 1px;
+    }
+
+    @return $pixels / $context * 1rem;
+}
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+//usage: @include shift([property],[duration],[easing]);
+@mixin transition($property: all, $duration: 0.4s, $ease: ease) {
+    transition: $property $duration $ease;
+    -webkit-transition: $property $duration $ease;
+    -moz-transition: $property $duration $ease;
+    -ms-transition: $property $duration $ease;
+}
+
+@mixin flex-position($display, $content, $items) {
+    display: $display;
+    justify-content: $content;
+    align-items: $items;
+}
+
+@mixin mobile {
+    @media screen and (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: #{$tablet-width}) and (max-width: #{$large-tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin large-tablet {
+    @media screen and (min-width: #{$large-tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: #{$desktop-width}) and (max-width: #{$large-screen-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin large-screen {
+    @media screen and (min-width: #{$large-screen-width}) {
+        @content;
+    }
+}

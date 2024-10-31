@@ -1,0 +1,11 @@
+{
+    "name": "poptics/custom-input",
+    "title": "Input",
+    "category": "widgets",
+    "parent": ["poptics/custom-form"],
+    "description": "Input elements of the form. You can customize its properties as you like! ",
+    "textdomain": "poptics",
+    "support": {
+        "html": false
+    }
+}

@@ -1,0 +1,106 @@
+// All common css
+:root {
+    --pt-primary-color: #3161f1;
+    --pt-primary-color-70: #4c93ff;
+    --pt-primary-color-50: #78aeff;
+    --pt-primary-color-25: #a5c9ff;
+    --pt-primary-color-15: #d2e4ff;
+    --pt-primary-color-08: #e9f2ff;
+    --pt-primary-color-06: #f3f6fe;
+
+    --pt-secondary-color: #0c274a;
+    --pt-secondary-color-65: #556880;
+    --pt-secondary-color-50: #8693a5;
+    --pt-secondary-color-30: #b6bec9;
+    --pt-secondary-color-20: #ced4db;
+    --pt-secondary-color-12: #e2ecf4;
+    --pt-secondary-color-08: #ecf2f8;
+    --pt-secondary-color-05: #f3f7fb;
+    --pt-secondary-color-03: #f8fafc;
+
+    --pt-danger-color: #e42d23;
+    --pt-danger-light-color: #f7d0d3;
+    --pt-success-color: #00c14e;
+    --pt-alert-color: #ef8201;
+    --pt-disable-color: #cecfd1;
+    --pt-state-color-01: #06a78a;
+    --pt-state-color-02: #f1a208;
+
+    --pt-primary-gradient: linear-gradient(180deg, #3263f8 0%, #254ec8 100%);
+    --pt-primary-gradient-reverse: linear-gradient(
+        170deg,
+        #3263f8 0%,
+        #254ec8 100%
+    );
+    --pt-secondary-gradient: linear-gradient(180deg, #45505e 0%, #0a1018 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 1rem 0;
+}
+
+.pt-fw-500 {
+    font-weight: 500;
+}
+
+.pt-input-title {
+    text-align: start;
+    margin-bottom: 1.125rem !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize;
+}
+
+.pt-description {
+    font-size: 0.75rem;
+    color: #4b5563;
+    line-height: 1rem;
+    letter-spacing: 0.005rem;
+}
+
+.ant-dropdown-menu-item .anticon {
+    min-width: 14px;
+    margin-inline-end: 8px;
+    font-size: 12px;
+}
+
+.pt-icon-btn {
+    display: flex;
+    align-items: center;
+}
+
+.pt-d-none {
+    display: none;
+}
+
+.pt-preview-modal {
+    .ant-modal-content {
+        min-width: 700px;
+    }
+}
+
+.pt-desktop-preview-modal {
+    .ant-modal-body {
+        width: 100%;
+    }
+}
+
+.pt-mobile-preview-modal {
+    .ant-modal-body {
+        margin: 0 auto;
+        width: 350px;
+    }
+}
+
+.pt-mb-10 {
+    margin-bottom: 10px;
+}

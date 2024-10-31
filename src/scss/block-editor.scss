@@ -1,0 +1,506 @@
+@import "~@wordpress/base-styles/colors";
+@import "~@wordpress/base-styles/variables";
+@import "~@wordpress/base-styles/mixins";
+@import "~@wordpress/base-styles/breakpoints";
+@import "~@wordpress/base-styles/animations";
+@import "~@wordpress/base-styles/z-index";
+
+$editor-font: "sans-serif";
+
+// In order to use mix-blend-mode, this element needs to have an explicitly set background-color
+// We scope it to .wp-toolbar to be wp-admin only, to prevent bleed into other implementations
+html.wp-toolbar {
+    background: $white;
+}
+
+body.block-editor-page {
+    @include wp-admin-reset(".block-editor");
+}
+
+.pt-block-editor-layout {
+    margin: 20px 0;
+    min-height: 70vh;
+}
+
+.pt-block-editor-sidebar {
+    border-right: 1px solid #edf0f4;
+    border-bottom: 1px solid #edf0f4;
+    border-radius: 0 16px 16px 0;
+    min-height: 100%;
+
+    @include break-small() {
+        display: block;
+    }
+
+    > .components-panel {
+        border: none;
+
+        > .components-panel__header {
+            background: #edf0f4;
+            border-radius: 0 16px 0 0;
+            border: none;
+        }
+    }
+
+    .block-editor-block-inspector__card {
+        margin: 0;
+    }
+
+    .block-editor-block-inspector {
+        height: 70vh;
+        overflow-y: scroll;
+
+        .components-panel__body-toggle.components-button {
+            font-size: 16px;
+        }
+    }
+}
+
+.getdavesbe-block-editor {
+    max-height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+
+    .block-editor-block-popover {
+        z-index: 998;
+    }
+}
+
+.editor-styles-wrapper {
+    width: 100%;
+
+    // We need the styles scoped to "body" to be added to the
+    // div.editor-styles wrapper
+    font-family: $editor-font;
+    font-size: $editor-font-size;
+    line-height: $editor-line-height;
+    color: $gray-900;
+    padding: 20px;
+    background: none;
+    position: relative;
+}
+
+.pt-block-editor-left {
+    position: relative;
+    background-color: #fafafa;
+    border-radius: 16px 0 0 16px;
+    border: 1px solid #edf0f4;
+    height: 100%;
+
+    @media (max-width: 768px) {
+        border-radius: 16px;
+    }
+}
+
+div[data-type="poptics/custom-form"] {
+    .block-editor-inner-blocks {
+        .wp-element-button {
+            box-shadow:
+                0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 0.6rem 0.8rem;
+            font-family: system-ui;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.pt-form-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.3rem 0px;
+
+    label {
+        font-size: 1rem;
+        margin-left: 0.3rem;
+        font-family: system-ui;
+        text-transform: capitalize;
+    }
+
+    input {
+        border: 1px solid #d9d9d9;
+        font-size: 14px;
+        padding: 4px 11px;
+        color: rgba(0, 0, 0, 0.88) !important;
+        border-radius: 6px !important;
+        transition: all 0.2s;
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        width: 100%;
+    }
+
+    input::placeholder {
+        font-family: system-ui;
+    }
+}
+
+.pt-custom-radio-label {
+    font-size: 1rem;
+    font-family: system-ui;
+    text-transform: capitalize;
+}
+
+.pt-custom-radio-component {
+    margin-bottom: 0.75rem;
+}
+
+.pt-custom-radio-group-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .pt-custom-radio-item-container {
+        display: flex;
+        align-items: center;
+        label {
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 0.3rem;
+            margin-bottom: 0.2rem;
+            font-family: system-ui;
+        }
+    }
+}
+
+.pt-panel-title {
+    padding: 0px 1rem;
+}
+
+// -------------------------Custom style settings CSS-------------------
+
+/* Overlay */
+.pt-popup-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 996;
+}
+
+.pt-pages-tab-navigator-container {
+    .pt-popup-overlay {
+        position: absolute;
+    }
+}
+
+.pt-popup-body {
+    position: relative;
+}
+
+.pt-close-icon {
+    position: absolute;
+    user-select: none;
+    z-index: 9999999999999999999;
+}
+
+.pt-style-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.pt-body-style {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 997;
+}
+
+.editor-mobile-styles-wrapper {
+    .pt-body-style {
+        max-width: 350px;
+    }
+}
+
+#poptics-popup-wrapper {
+    .pt-popup-overlay {
+        z-index: 9999999991;
+    }
+
+    .pt-body-style {
+        z-index: 9999999992;
+    }
+}
+
+.pt-popup-size-box {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0px 1px 2px 0px #0000000d;
+    padding: 8px;
+    width: 100%;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.pt-popup-inner-box {
+    height: 24px;
+    margin: 0 auto;
+    background-color: #e5e7eb;
+    border-radius: 5px;
+}
+
+.pt-body-style-font {
+    color: #6b7280;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.pt-style-settings-panel-body {
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 6px;
+
+    .ant-flex {
+        strong {
+            text-transform: capitalize;
+
+            @extend .pt-body-style-font;
+        }
+    }
+
+    .ant-segmented {
+        @extend .pt-body-style-font;
+        background-color: #e5e7eb;
+        padding: 5px;
+    }
+
+    .ant-segmented-item {
+        text-transform: capitalize;
+    }
+
+    .component-alignment-matrix-control {
+        background-color: #ffffff;
+        width: 100%;
+    }
+
+    .components-base-control {
+        margin-bottom: 8px !important;
+        .components-base-control__field {
+            margin: 0;
+        }
+    }
+
+    .pt-img-upload-btn {
+        text-align: center;
+    }
+
+    .components-color-picker {
+        width: 100% !important;
+
+        .react-colorful {
+            width: 100% !important;
+        }
+
+        .components-flex:last-of-type {
+            padding-left: 8px !important;
+        }
+
+        .components-base-control {
+            margin-bottom: 0 !important;
+            .components-base-control__field {
+                margin: 0;
+            }
+        }
+    }
+
+    .components-input-control__input,
+    .components-select-control__input {
+        min-height: 40px !important;
+        height: 40px !important;
+    }
+
+    .components-input-control__backdrop {
+        border: 1px solid #e5e7eb !important;
+        box-shadow: 0px 1px 2px 0px #0000000d;
+        border-radius: 6px;
+    }
+
+    .ant-space-compact-block
+        > div:first-child
+        .components-input-control__backdrop {
+        border-radius: 0;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+
+    .ant-space-compact-block
+        > div:not(:first-child)
+        .components-input-control__backdrop {
+        border-left: none;
+        border-radius: 0;
+    }
+
+    .ant-form-item {
+        margin-bottom: 0;
+    }
+
+    .components-toolbar {
+        @extend .pt-popup-size-box;
+
+        padding: 0;
+    }
+}
+
+.pt-general-settings-body {
+    .components-focal-point-picker {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .components-focal-point-picker__media {
+        background: #fff !important;
+        border-radius: 6px !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .components-focal-point-picker__grid {
+        opacity: 1 !important;
+
+        div {
+            background: #e5e7eb;
+        }
+    }
+
+    .components-focal-point-picker {
+        &::after {
+            border-radius: 6px !important;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0px 1px 2px 0px #0000000d !important;
+        }
+    }
+
+    .components-focal-point-picker__icon_container {
+        background: #bfdbfe !important;
+        box-shadow: none !important;
+    }
+}
+
+.pt-popup-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.pt-compact-unit-control {
+    width: 25%;
+}
+
+.pt-compact-link-btn {
+    width: 12%;
+    height: 40px;
+}
+
+.pt-float-controller {
+    position: absolute;
+    top: 20px;
+    z-index: 997;
+    left: 20px;
+    background-color: #e5e7eb;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.pt-unit-display-text-control {
+    margin-bottom: 0px !important;
+}
+
+.components-datetime__time {
+    fieldset {
+        .components-flex {
+            align-items: start !important;
+        }
+    }
+}
+
+.block-editor-block-card {
+    align-items: center;
+}
+
+.block-editor-block-card__title {
+    font-weight: 700;
+    font-size: 16px !important;
+}
+
+.pt-countdown-container {
+    .pt-countdown-time {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .pt-countdown-label {
+        font-size: 0.75rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+    }
+}
+
+.pt-countdown-message {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pt-popup-close-btn {
+    height: 100%;
+    width: 100% !important;
+    padding: 10px 8px !important;
+}
+
+.pt-device-alert-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.pt-device-alert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.pt-error-text {
+    color: red;
+}
+
+.pt-control-component-legend-hide {
+    legend {
+        display: none;
+    }
+
+    div {
+        border: 1px solid lightgray;
+        max-width: fit-content;
+        padding: 0px !important;
+        button {
+            margin-right: 0px !important;
+        }
+        button:not(:last-child) {
+            border-right: 1px solid lightgray;
+        }
+    }
+}
